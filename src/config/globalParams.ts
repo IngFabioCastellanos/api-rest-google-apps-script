@@ -1,4 +1,4 @@
 const globalParams = {
-  idCarpeta: "1zKvLe8zHJveBH2ys4b7WXQJ2rKyYMeyfy",
-  idDatabase: "1ZxD1SxctgLaYsmosMkKSp6CIUUY-CUg85RQRvsmrtCs",
+  idCarpeta: "aqui colocan el id de la carpeta donde se subiran los archivos que necesiten enviar",
+  idDatabase: "aqui el id de la base de datos del proyecto osea la sheet",
 };
