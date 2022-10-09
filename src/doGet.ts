@@ -10,7 +10,4 @@ function template(): GoogleAppsScript.HTML.HtmlOutput {
       'width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"'
     )
     .setTitle("Api Rest Full Gas")
-    .setFaviconUrl(
-      "https://raw.githubusercontent.com/IngFabioCastellanos/imagenes/mis-logos/antilope.ico"
-    );
 }
