@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/IngFabioCastellanos/imagenes/mis-logos/antilope.ico"
+    />
+    <title>Api Rest</title>
+  </head>
+  <body>
+    <div
+      class="w-full bg-blue-400 text-white text-4xl text-center py-3 font-bold"
+    >
+      <h2>Api Rest GAS</h2>
+    </div>
+    <div>
+      <h3 class="sm:px-1 md:px-5 lg:px-16 text-center my-5">
+        Api Rest usada para cruds con bases de datos de tipo SpreadSheet en
+        Google
+      </h3>
+    </div>
+    <div class="flex">
+      <button
+        class="mx-auto p-3 bg-blue-400 text-white rounded-lg hover:shadow-2xl"
+      >
+        Documentación aqui abajo 🤣😁😎
+      </button>
+    </div>
+    <p class="text-center font-bold text-blue-400">
+      --------------------------------------------------------------------------------
+    </p>
+    <h2 class="font-bold text-3xl text-center text-blue-400">
+      Metodos soportados
+    </h2>
+    <pre class="bg-black text-white mx-16 p-5 rounded-lg mt-5">
+        <p class="text-green-300 text-center text-xl font-semibold">metodos get por query string</p>
+
+        <p class="text-green-300 pl-16">buscar todo en una sheet:</p>
+        interface findAllByNamesheet {
+        nameSheet: string;
+        }
+        <p class="text-green-300 pl-16">buscar datos por un id:</p>
+        interface findDataById {
+        nameSheet: string;
+        id: string;
+        nameId: string;
+        }
+        
+        interface findMultipleDataById {
+        nameSheet: string;
+        id: string;
+        nameId: string;
+        }
+        
+        interface saveObjectInSheet {
+        datos: {};
+        nameSheet: string;
+        }
+        
+        interface updateObjectInSheet {
+        id: string;
+        datos: {};
+        nameSheet: string;
+        nameId: string;
+        }
+        
+        interface deleteObjectInSheet {
+        id: string;
+        nameSheet: string;
+        nameId: string;
+        }
+        
+        interface guardarCsv {
+        data: string;
+        nameSheet: string;
+        }
+        
+        interface saveFileInDrive {
+        mimeType: string;
+        bytes: any[];
+        filename: string;
+        }
+        
+        interface returnApiFind {
+        status: string;
+        message: string;
+        data: any[];
+        }
+
+    </pre>
+  </body>
+
+  <script>
+    (async () => {
+      const params = {
+        action: "findAllByNamesheet",
+        nameSheet: "usuarios",
+      };
+
+      const url =
+        "https://script.google.com/macros/s/AKfycbzJqaLkQa-90gmAKM-JS0iX50SNQA5wCFfXquX8wh20dMTCBn61hfjf3y9dXpYqrOI/exec";
+
+      const resp = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(params),
+      });
+
+      console.log(await resp.json());
+    })();
+  </script>
+</html>
